@@ -51,13 +51,13 @@ p { margin: 0 0 14px; }
 .nav a { color: rgba(255, 255, 255, 0.85); text-decoration: none; font-weight: 600; }
 .nav a:hover { color: #fff; }
 
-/* Hero: the truck photo, darkened on the left so the words stay readable. Without a photo it's a navy gradient. */
-.hero { position: relative; color: #fff; background: var(--navy); overflow: hidden; isolation: isolate; }
-.hero-media { position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(90deg, rgba(10, 24, 40, 0.94) 0%, rgba(10, 24, 40, 0.78) 45%, rgba(10, 24, 40, 0.25) 100%),
-    url("images/truck.jpg") center 60% / cover no-repeat, linear-gradient(135deg, #17324f, #0b1a2b); }
-.hero-inner { padding-top: clamp(72px, 12vw, 140px); padding-bottom: clamp(64px, 10vw, 120px); max-width: 1120px; }
-.hero h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); max-width: 14ch; margin-bottom: 16px; }
+/* Hero: headline on navy, the truck photo beside it so the company name on the door stays readable. */
+.hero { color: #fff; background: linear-gradient(135deg, #17324f 0%, var(--navy) 55%, #0b1a2b 100%); overflow: hidden; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(28px, 5vw, 56px); align-items: center;
+  padding-top: clamp(48px, 8vw, 96px); padding-bottom: clamp(48px, 8vw, 96px); }
+.hero h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); max-width: 14ch; margin-bottom: 16px; }
+.hero-photo { margin: 0; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.7); border: 4px solid rgba(255, 255, 255, 0.08); }
+.hero-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; font-weight: 700; color: var(--amber); margin-bottom: 14px; }
 .lead { font-size: clamp(1.05rem, 2.2vw, 1.25rem); max-width: 38ch; color: rgba(255, 255, 255, 0.9); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 30px; }
@@ -141,6 +141,8 @@ input:focus, select:focus, textarea:focus { border-color: var(--navy-2); outline
   .card-feature { grid-template-columns: auto 1fr; }
   .card-feature .ticks { grid-column: 1 / -1; grid-row: auto; margin-top: 12px; }
   .steps { grid-template-columns: 1fr; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-photo { order: 2; }
   .about, .quote, .contact { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (max-width: 640px) {
@@ -153,7 +155,6 @@ input:focus, select:focus, textarea:focus { border-color: var(--navy-2); outline
   .card-feature .icon { grid-row: auto; }
   .grid { grid-template-columns: 1fr; }
   .hero-actions .btn { flex: 1 1 100%; }
-  .hero-media { background-position: 70% center; }
   .call-fab { display: block; position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 30;
     background: var(--amber); color: var(--amber-ink); font-weight: 800; text-decoration: none; padding: 14px 20px; border-radius: 999px;
     box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.45); }

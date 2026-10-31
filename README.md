@@ -6,7 +6,7 @@ Plain HTML and CSS, no build step, published with GitHub Pages from the reposito
 - `index.html`: the page
 - `styles.css`: all styling
 - `thanks.html`: where the quote form sends people after they submit
-- `images/truck.jpg`: hero photo (the page shows a navy background until it's added)
+- `images/truck.jpg`, `images/truck-800.jpg`: the truck photo beside the headline (resized, location data stripped)
 
 ## Quote form
 
