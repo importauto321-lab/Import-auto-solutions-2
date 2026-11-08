@@ -16,5 +16,6 @@ link in it, and requests are delivered from then on. To change the address, edit
 
 ## Custom domain
 
-When you're ready: Settings → Pages → Custom domain, then add the DNS records GitHub shows. Update the `_next`
-URL in the form to the new domain so people land on the thanks page there.
+The site is served at https://importautoprivatefleet.com. The `CNAME` file holds the domain; DNS is at Namecheap
+(four A records for `@` pointing to GitHub Pages, and a `www` CNAME to `importauto321-lab.github.io`). The form's
+`_next` URL and the share image in `index.html` use this domain, so change them too if the domain ever changes.
